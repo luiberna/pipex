@@ -6,7 +6,7 @@
 /*   By: luiberna <luiberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 11:58:43 by luiberna          #+#    #+#             */
-/*   Updated: 2024/04/10 17:10:40 by luiberna         ###   ########.fr       */
+/*   Updated: 2024/04/23 01:34:42 by luiberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,15 @@
 
 # include "libft.h"
 
-void	parent(char **argv, char **envp, int *fd);
-void    child(char **argv, char **envp, int *fd);
-void    execute(char *argv, char **envp);
-char    *get_path(char *argv, char **envp);
+// utils
+void	free_list(char **list);
+char	*get_path(char *cmd, char **envp);
+void	execute_w_path(char **cmd, char **envp);
+void	execute(char *argv, char **envp);
 
+// pipex
+void	child(char **argv, char **envp, int *fd);
+void	child2(char **argv, char **envp, int *fd);
+void	pipex(char **argv, char **envp);
 
 #endif

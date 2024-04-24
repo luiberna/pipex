@@ -13,13 +13,13 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h> //printf
+# include <fcntl.h>  //file managment
+# include <limits.h> //macros
+# include <stdarg.h> //variadic
+# include <stdio.h>  //printf
 # include <stdlib.h> //malloc
 # include <string.h> //
 # include <unistd.h> //write
-# include <fcntl.h> //file managment
-# include <limits.h> //macros
-# include <stdarg.h> //variadic
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1024
@@ -72,25 +72,25 @@ void				ft_lstadd_front(t_list **lst, t_list *new);
 int					ft_lstsize(t_list *lst);
 t_list				*ft_lstlast(t_list *lst);
 void				ft_lstadd_back(t_list **lst, t_list *new);
-void				ft_lstdelone(t_list *lst, void (*del)(void*));
-void				ft_lstclear(t_list **lst, void (*del)(void*));
+void				ft_lstdelone(t_list *lst, void (*del)(void *));
+void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
-t_list				*ft_lstmap(t_list *lst, void *(*f)(void *), 
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 
-//get_next_line						
-char			*get_next_line(int fd);
-char			*ft_makeline(char *str, char *buffer);
-void			clean_buffer(char *buffer);
-int				gnl_ft_strlen(char *str);
+// get_next_line
+char				*get_next_line(int fd);
+char				*ft_makeline(char *str, char *buffer);
+void				clean_buffer(char *buffer);
+int					gnl_ft_strlen(char *str);
 
-//printf
-int				ft_printf(const char *s, ...);
-int				ft_putchar(char c);
-int				ft_puthexnbr(unsigned long int n, int c);
-int				ft_putnbr(long long int n);
-int				ft_putptr(unsigned long int n);
-int				ft_putstr(char *s);
-int				ft_putunsigned(unsigned int n);
+// printf
+int					ft_printf(const char *s, ...);
+int					ft_putchar(char c);
+int					ft_puthexnbr(unsigned long int n, int c);
+int					ft_putnbr(long long int n);
+int					ft_putptr(unsigned long int n);
+int					ft_putstr(char *s);
+int					ft_putunsigned(unsigned int n);
 
 #endif
