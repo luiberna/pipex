@@ -6,7 +6,7 @@
 /*   By: luiberna <luiberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 12:11:26 by luiberna          #+#    #+#             */
-/*   Updated: 2024/04/23 01:28:20 by luiberna         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:48:08 by luiberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ void	child(char **argv, char **envp, int *fd)
 	if (file == -1)
 	{
 		ft_printf("\033[31mError: Invalid file\n\e[0m", 2);
+		close(fd[0]);
+		close(fd[1]);
+		close(file);
 		exit(1);
 	}
 	dup2(fd[1], STDOUT_FILENO);
@@ -38,6 +41,9 @@ void	child2(char **argv, char **envp, int *fd)
 	if (fileout == -1)
 	{
 		ft_printf("\033[31mError: Invalid file\n\e[0m", 2);
+		close(fd[1]);
+		close(fd[0]);
+		close(fileout);
 		exit(1);
 	}
 	dup2(fd[0], STDIN_FILENO);

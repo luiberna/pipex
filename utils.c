@@ -6,7 +6,7 @@
 /*   By: luiberna <luiberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 01:27:39 by luiberna          #+#    #+#             */
-/*   Updated: 2024/04/23 01:37:37 by luiberna         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:49:07 by luiberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*get_path(char *cmd, char **envp)
 	char	**paths;
 
 	i = 0;
-	while (ft_strnstr(envp[i], "PATH=", 5) == 0)
+	while (envp[0] && ft_strnstr(envp[i], "PATH=", 5) == 0)
 		i++;
 	paths = ft_split(envp[i] + 5, ':');
 	i = 0;
