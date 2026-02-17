@@ -90,6 +90,8 @@ Key idea: `dup2()` rewires standard input/output so commands behave like in a re
 - Redirects stdout → outfile
 - Executes `cmd2`
 
+  <img width="674" height="601" alt="pipex" src="https://github.com/user-attachments/assets/12f103a9-a67e-479a-a0e0-5693f6fe08a7" />
+
 ---
 
 ### 2) Command execution + PATH resolution (`utils.c`)
